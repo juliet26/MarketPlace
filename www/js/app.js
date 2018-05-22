@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic'])
+angular.module('starter', ['ionic','firebase'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -71,5 +71,14 @@ angular.module('starter', ['ionic'])
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/comprar');
 
+  var config = {
+    apiKey: "AIzaSyAbFXE17YjB8DUDYagpur1njQfPGwYqYKg",
+    authDomain: "datamarketplace-12d74.firebaseapp.com",
+    databaseURL: "https://datamarketplace-12d74.firebaseio.com",
+    projectId: "datamarketplace-12d74",
+    storageBucket: "datamarketplace-12d74.appspot.com",
+    messagingSenderId: "501958636447"
+  };
+  firebase.initializeApp(config);
 
 });
